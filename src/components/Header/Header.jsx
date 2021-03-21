@@ -16,6 +16,7 @@ import { getIsSignedIn } from '../../reducks/users/selectors';
 import { push } from 'connected-react-router';
 import { Badge } from '@material-ui/core';
 import { FavoriteBorder, ShoppingCart } from '@material-ui/icons';
+import ClosableDrawer from './ClosableDrawer';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -68,33 +69,9 @@ const Header = () => {
                         <IconButton>
                             <FavoriteBorder></FavoriteBorder>
                         </IconButton>
-                        <IconButton
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleMenu}
-                            color="inherit"
-                        >
-                            <AccountCircle />
+                        <IconButton>
+                            <ClosableDrawer></ClosableDrawer>
                         </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorEl}
-                            anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                            }}
-                            open={open}
-                            onClose={handleClose}
-                        >
-                            <MenuItem onClick={handleClose}>Profile</MenuItem>
-                            <MenuItem onClick={handleClose}>My account</MenuItem>
-                        </Menu>
                     </div>
                 )}
             </Toolbar>
