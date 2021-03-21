@@ -63,7 +63,7 @@ const SetSizeArea = (props) => {
 
     const memoIndex = useEffect(() => {
         setIndex(props.sizes.length);
-      }, [props.sizes.length]);
+    }, [props.sizes.length]);
 
     return (
         <div>
